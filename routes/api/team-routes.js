@@ -9,9 +9,19 @@ fetch('https://nfl-team-stats.p.rapidapi.com/v1/nfl-stats/teams/win-stats/2022',
         "X-RapidAPI-Host":"nfl-team-stats.p.rapidapi.com",
     }
 })
+
+
 .then((response)=>
     response.json()
-).then((data)=>{res.send(data)})
+).then((data)=>{
+    // localStorage.setItem("teamWinStatsList",data._embedded.teamWinStatsList)
+    res.send(data)
 })
+}) 
+
+ // {
+// 	"_embedded": {
+// 		"teamWinStatsList": [
+// 			{
 // look at file structure for last mini-project 
 module.exports = router;
