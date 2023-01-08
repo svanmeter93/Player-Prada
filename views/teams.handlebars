@@ -1,0 +1,10 @@
+{{#each teams as |team|}}
+
+<div id={{team.name}}>
+    <p>Name: {{team.name}}</p>
+    <p>Wins: {{team.wins}}</p>
+    <p>Loses: {{team.losses}}</p>
+</div>
+{{/each}}
+{{!-- create button on div with data attribute"data-name" that stores the team's name
+use javascript to make call to API that updates the users favorite team name--}}

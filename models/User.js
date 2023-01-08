@@ -27,9 +27,8 @@ User.init(
             }
 
         },
-        fav_team_id:{
-            type:DataTypes.INTEGER,
-            references:{model:'team',key:'id'},
+        fav_team_name:{
+            type:DataTypes.STRING,
             allowNull:true,
         },
     },
