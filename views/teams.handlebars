@@ -1,10 +1,38 @@
 {{#each teams as |team|}}
 
+<div 
 <div id={{team.name}}>
     <p>Name: {{team.name}}</p>
     <p>Wins: {{team.wins}}</p>
     <p>Loses: {{team.losses}}</p>
+    <button>Favorite team?</button>
 </div>
 {{/each}}
 {{!-- create button on div with data attribute"data-name" that stores the team's name
 use javascript to make call to API that updates the users favorite team name--}}
+
+        <div class="card column flip-card">
+          <div class="card-content">
+            <div 
+            <div id={{team.name}}></div>
+            <p class="title">
+                <p>Name: {{team.name}}</p> 
+                <button id="favoriteButton">Favorite team?</button>
+            </p>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+              <span>
+                <p>Wins: {{team.wins}}</p> 
+              </span>
+            </p>
+            <p class="card-footer-item">
+              <span>
+                <p>Loses: {{team.losses}}</p>
+                </a>
+            </a>
+              </span>
+            </p>
+          </footer>
+          {{/each}}
+        </div>
