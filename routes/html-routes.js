@@ -16,6 +16,7 @@ html.get("/teams",async(req,res)=>{
 })
 
 
+
 .then((response)=>
     response.json()
 ).then((data)=>{

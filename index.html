@@ -10,7 +10,6 @@
       defer
       src="https://use.fontawesome.com/realeases/v5.3.1/js/all.js"
     </script>
-
   </head>
   <body>
     <header class="section has-background-link py-4 has-text-white">
@@ -20,19 +19,16 @@
             <span class="icon">
               <i class="far fa-envelope"></i>
             </span>
-          
           </div>
             <div class="column">
             <span class="icon">
               <i class="far fa-phone-volume"></i>
             </span>
-          
             </div>
             <div class="column has-text-right-tablet">
               <span class="icon">
                 <i class="fas fa-headphones-alt"></i>
               </span>
-           
           </div>
         </div>
       </div>
@@ -45,28 +41,23 @@
             <a class="navbar-item">
                 <h1 class="title has-text-white">Prada Player</h1>
             </a>
-        
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
             </a>
           </div>
-        
           <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
               <a class="navbar-item has-text-white">
                 Home
               </a>
-        
               <a class="navbar-item has-text-white">
                 Teams
               </a>
               <a class="navbar-item has-text-white">
                 Scores
               </a>
-        
-        
             <div class="navbar-end">
               <div class="navbar-item">
                 <div class="buttons">
@@ -102,36 +93,25 @@
       </div>
     </section>
     <section class="section" id="services">
-
     </section>
     <section class="section" id="contact">
-      
     </section>
-
     <script>
-      
       document.addEventListener('DOMContentLoaded', () => {
-
 // Get all "navbar-burger" elements
 const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
 // Add a click event on each of them
 $navbarBurgers.forEach( el => {
   el.addEventListener('click', () => {
-
     // Get the target from the "data-target" attribute
     const target = el.dataset.target;
     const $target = document.getElementById(target);
-
     // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
     el.classList.toggle('is-active');
     $target.classList.toggle('is-active');
-
   });
 });
-
 });
     </script>
-
   </body>
 </html>

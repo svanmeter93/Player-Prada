@@ -11,6 +11,7 @@ fetch('https://nfl-team-stats.p.rapidapi.com/v1/nfl-stats/teams/win-stats/2022',
 })
 
 
+
 .then((response)=>
     response.json()
 ).then((data)=>{
