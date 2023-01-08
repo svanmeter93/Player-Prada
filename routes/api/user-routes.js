@@ -1,5 +1,5 @@
 const user = require('express').Router();
-const withauth =require('../utils/withauth');
+const withauth =require('../../utils/withauth');
 const {User} = require("../../models");
 
 user.post("/",async(req,res)=>{
@@ -35,4 +35,15 @@ user.post("/login",async(req,res)=>{
     catch (error) {
         res.status(500).json(error)}
 });
+
+user.get('/logout', (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(()=>{
+            res.redirect('/');
+        })
+    } else {
+        res.redirect('/login');
+    }
+});
 // write route to update users favorite team name
+module.exports=user;
