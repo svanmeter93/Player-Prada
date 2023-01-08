@@ -5,9 +5,10 @@ const {User} = require("../../models");
 user.post("/",async(req,res)=>{
     try {
         const {username,password} = req.body
-        const newUser = await User.create({username,password,fav_team_id:null})
+        const newUser = await User.create({username,password,fav_team_name:null})
         req.session.save(()=>{
             req.session.logged_in=true
+            req.session.user_id=newUser.id
             res.json(newUser)
         })
     } catch (error) {
@@ -34,3 +35,4 @@ user.post("/login",async(req,res)=>{
     catch (error) {
         res.status(500).json(error)}
 });
+// write route to update users favorite team name
