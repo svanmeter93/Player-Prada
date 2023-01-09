@@ -1,11 +1,14 @@
+DROP TABLE IF EXISTS teams;
+
 CREATE TABLE teams (
     team_id INTEGER PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    mascot VARCHAR(255) NOT NULL,
     division VARCHAR(255) NOT NULL
 );
 
 INSERT INTO
-    teams (city, mascot, name, division)
+    teams(team_id, city, mascot, division)
 VALUES
     (1, 'New England', 'Patriots', 'AFC East'),
     (2, 'Miami', 'Dolphins', 'AFC East'),
@@ -38,4 +41,4 @@ VALUES
     (29, 'Atlanta', 'Falcons', 'NFC South'),
     (30, 'Carolina', 'Panthers', 'NFC South'),
     (31, 'New Orleans', 'Saints', 'NFC South'),
-    (32, 'Tampa Bay', 'Buccaneers', 'NFC South'),
+    (32, 'Tampa Bay', 'Buccaneers', 'NFC South')
