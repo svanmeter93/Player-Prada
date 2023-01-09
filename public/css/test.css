@@ -1,3 +1,9 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 10deg;
+  inherits: false;
+}
+
 :root {
   --card-height: 25vh;
   --card-width: calc(var(--card-height) / 1.5);
@@ -16,7 +22,7 @@
   --colors-cowboys: rgb(0, 53, 148), rgb(134, 147, 151), rgb(0, 34, 68), rgb(127, 150, 149), rgb(255, 255, 255);
   --colors-giants: rgb(163, 13, 45), rgb(155, 161, 162), rgb(1, 35, 82);
   --colors-lions: rgb(0, 118, 182), rgb(176, 183, 188), rgb(0, 0, 0);
-  --colors-bears: rgb(11, 22, 42), rgb(200, 56, 3);
+  --colors-chicago-bears: rgb(11, 22, 42), rgb(200, 56, 3);
   --colors-bills: rgb(198, 12, 48), rgb(0, 51, 141);
   --colors-panthers: rgb(16, 24, 32), rgb(191, 192, 191), rgb(0, 133, 202);
   --colors-dolphins: rgb(0, 142, 151), rgb(252, 76, 2), rgb(0, 87, 120);
@@ -35,388 +41,48 @@
   --colors-saints: rgb(211, 188, 141), rgb(16, 24, 32);
 }
 
-#saints::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
+.card{
+background: #3e3b3b;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 4rem;
+    color: white;
+    box-sizing: border-box;
+}
 
-  #saints::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
+.favoriteButton{
+  color: #3e3b3b;
+}
+
+.favoriteButton:hover{
+  cursor: crosshair;
+}
+
+
+
+#buccaneers{
+  background-image: linear-gradient(
+    var(--rotate)
+    , var(--colors-broncos));
+    position:static;
+    z-index: -1;
+    top: 100%;
+    left: -2%;
+    animation: spin 30s linear infinite;
+
   }
   
-
-  #patriots::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #patriots::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-
-  #dolphins::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #dolphins::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #bills::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #bills::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #jets::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #jets::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #broncos::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #broncos::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #chiefs::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #chiefs::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #raiders::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #raiders::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #chargers::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #chargers::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #ravens::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #ravens::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #bengals::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #bengals::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #browns::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #browns::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #steelers::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #steelers::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #texans::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #texans::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #colts::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #colts::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #jaguars::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #jaguars::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #titans::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #titans::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #cowboys::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #cowboys::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #giants::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #giants::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #eagles::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #eagles::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #commanders::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #commanders::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #cardinals::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #cardinals::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #rams::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #rams::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #49ers::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #49ers::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #seahawks::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #seahawks::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #bears::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #bears::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #lions::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #lions::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #packers::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #packers::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #vikings::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #vikings::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #falcons::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #falcons::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #panthers::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #panthers::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
-  }
-
-  #buccaneers::before {
-    background-image: linear-gradient(
-      var(--rotate)
-      , var(--colors-saints));
-  }
-
-  #buccaneers::after {
-    background-image: linear-gradient(
-      var(--rotate)
-      ,var(--colors-saints));
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    50% {
+      --rotate: 180deg;
+    }
+    100%{
+      --rotate: 360%
+    }
   }

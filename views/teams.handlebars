@@ -1,6 +1,6 @@
 {{#each teams as |team|}}
 
- <div id={{tolower team.name}} class="card column flip-card">
+ <div id="buccaneers" class="card column flip-card">
           <div class="card-content">
             <p class="title">
                 <p>Name: {{team.name}}</p> 
@@ -16,12 +16,19 @@
             <p class="card-footer-item">
               <span>
                 <p>Loses: {{team.losses}}</p>
+              </span>
+            <p class="card-footer-item">
+              <span>
+                <p> Win Rate: {{winRatePercentage}}</p>
+              </span>
                 </a>
             </a>
               </span>
             </p>
           </footer>
         </div>
+
+
 {{/each}}
 {{!-- create button on div with data attribute"data-name" that stores the team's name
 use javascript to make call to API that updates the users favorite team name--}}
