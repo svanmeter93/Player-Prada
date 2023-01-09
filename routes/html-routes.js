@@ -3,7 +3,7 @@ const html = require('express').Router();
 const withauth =require('../utils/withauth');
 const {User} = require("../models");
 html.get("/",withauth,(req,res)=>{
-    res.redirect("/teams")
+    res.redirect("teams")
 })
 html.get("/login",(req,res)=>{res.render('login')})
 html.get("/teams",withauth, async(req,res)=>{
