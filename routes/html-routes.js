@@ -14,14 +14,21 @@ html.get("/teams",withauth, async(req,res)=>{
         "X-RapidAPI-Host":"nfl-team-stats.p.rapidapi.com",
     }
 })
-
-
-
 .then((response)=>
     response.json()
 ).then((data)=>{
-    // localStorage.setItem("teamWinStatsList",data._embedded.teamWinStatsList)
-    res.render("teams",{teams:data._embedded.teamWinStatsList})
+	// console.log(data._embedded.teamWinStatsList);
+	const teamObj = data._embedded.teamWinStatsList;
+	
+	teamObj.forEach(element => {
+		let strArr = element.name.split(' ');
+		strArr = strArr.filter( word => !word.startsWith('x'));
+		element.id = strArr.join('-').toLowerCase();
+	});
+	// pull data from database for favorite team
+	// teamObj.unshift(/*object data from favorite team pull */);
+
+	res.render("teams",{teams:data._embedded.teamWinStatsList})
 })
 })
 
@@ -29,4 +36,4 @@ html.get("/signup",(req,res)=>{
     res.render("signup")
 })
 
-module.exports = html
+module.exports = html;
