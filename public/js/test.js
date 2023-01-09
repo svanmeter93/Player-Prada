@@ -71,3 +71,4 @@ if (favoriteButtons.length) {
     btn.addEventListener("click", favoriteHandler);
   });
 }
+
