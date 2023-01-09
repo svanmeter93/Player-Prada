@@ -181,6 +181,27 @@
 #buffalo-bills {
   background-image: linear-gradient(var(--rotate), var(--colors-bills));
 }
+
+#minnesota-vikings {
+  background-image: linear-gradient(var(--rotate), var(--colors-vikings));
+}
+
+#new-england-patriots {
+  background-image: linear-gradient(var(--rotate), var(--colors-patriots));
+}
+
+#san-francisco-49ers {
+  background-image: linear-gradient(var(--rotate), var(--colors-49ers));
+}
+
+#kansas-city-chiefs {
+  background-image: linear-gradient(var(--rotate), var(--colors-chiefs));
+}
+
+#philadelphia-eagles {
+  background-image: linear-gradient(var(--rotate), var(--colors-eagles));
+}
+
 @keyframes spin {
   0% {
     --rotate: 0deg;
