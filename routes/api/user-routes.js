@@ -35,7 +35,8 @@ user.post("/login", async (req, res) => {
       return res.status(400).end();
     }
     req.session.save(() => {
-      (req.session.logged_in = true), (req.session.user_id = userData.id);
+      req.session.logged_in = true;
+      req.session.user_id = userData.id;
       res.json({ message: "Logged in!" });
     });
   } catch (error) {
