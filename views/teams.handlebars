@@ -1,10 +1,10 @@
 {{#each teams as |team|}}
 
- <div id="buccaneers" class="card column flip-card">
+ <div id={{team.id}} class="card column flip-card">
           <div class="card-content">
             <p class="title">
                 <p>Name: {{team.name}}</p> 
-                <button class="favoriteButton" id={{tolower team.name}}>Favorite team?</button>
+                <button class="favoriteButton" id={{team.id}}>Favorite team?</button>
             </p>
           </div>
           <footer class="card-footer">
