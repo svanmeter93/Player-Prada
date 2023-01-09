@@ -20,15 +20,13 @@ html.get("/teams",withauth, async(req,res)=>{
 	// console.log(data._embedded.teamWinStatsList);
 	const teamObj = data._embedded.teamWinStatsList;
 	
-	teamObj.sort((a, b) => a.name.localeCompare(b.name));
+	teamObj.forEach(element => {
+		let strArr = element.name.split(' ');
+		strArr = strArr.filter( word => !word.startsWith('x'));
+		element.id = strArr.join('-').toLowerCase();
+	});
 	// pull data from database for favorite team
 	// teamObj.unshift(/*object data from favorite team pull */);
-
-	data._embedded.teamWinStatsList.forEach(element => {
-		let transformed = element.name.replace(/\s+/g, '-').toLowerCase();
-		console.log(transformed);
-		return transformed.substring(0, transformed.indexOf("-x"));
-	});
 
 	res.render("teams",{teams:data._embedded.teamWinStatsList})
 })
