@@ -35,16 +35,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
-
-
-
-
-
-// route for user's dashboard
-
-// route for handling 404 requests(unavailable routes)
-
-
 // sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {

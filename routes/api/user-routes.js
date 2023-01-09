@@ -26,11 +26,13 @@ user.post("/login", async (req, res) => {
       where: { username: req.body.username },
     });
     if (!userData) {
-      return res.status(404).json({ message: "User not found!" });
+      res.statusMessage = "User not found!";
+      return res.status(404).end();
     }
     const correctPW = await userData.checkPassword(req.body.password);
     if (!correctPW) {
-      return res.status(400).json({ message: "Incorrect password!" });
+      res.statusMessage = "Incorrect password!";
+      return res.status(400).end();
     }
     req.session.save(() => {
       (req.session.logged_in = true), (req.session.user_id = userData.id);

@@ -2,6 +2,7 @@ const fetch = require('node-fetch');
 const html = require('express').Router();
 const withauth =require('../utils/withauth');
 const {User} = require("../models");
+
 html.get("/",withauth,(req,res)=>{
     res.redirect("teams")
 })
@@ -19,7 +20,7 @@ html.get("/teams",withauth, async(req,res)=>{
 ).then((data)=>{
 	// console.log(data._embedded.teamWinStatsList);
 	const teamObj = data._embedded.teamWinStatsList;
-	
+
 	teamObj.forEach(element => {
 		let strArr = element.name.split(' ');
 		strArr = strArr.filter( word => !word.startsWith('x'));
@@ -28,7 +29,7 @@ html.get("/teams",withauth, async(req,res)=>{
 	// pull data from database for favorite team
 	// teamObj.unshift(/*object data from favorite team pull */);
 
-	res.render("teams",{teams:data._embedded.teamWinStatsList})
+	res.render("teams",{teams: teamObj})
 })
 })
 
