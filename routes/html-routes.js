@@ -17,18 +17,23 @@ html.get("/teams",withauth, async(req,res)=>{
 })
 .then((response)=>
     response.json()
-).then((data)=>{
+).then(async (data) =>{
 	// console.log(data._embedded.teamWinStatsList);
 	const teamObj = data._embedded.teamWinStatsList;
+	const user = await User.findOne({
+		where: { id:req.session.user_id }
+	});
 
 	teamObj.forEach(element => {
 		let strArr = element.name.split(' ');
 		strArr = strArr.filter( word => !word.startsWith('x'));
 		element.id = strArr.join('-').toLowerCase();
 	});
+
+	teamObj.sort((a, b) => a.id === user.fav_team_name || b.id === user.fav_team_name ? -1 : 1)
 	// pull data from database for favorite team
 	// teamObj.unshift(/*object data from favorite team pull */);
-
+	console.log(teamObj);
 	res.render("teams",{teams: teamObj})
 })
 })

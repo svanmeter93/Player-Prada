@@ -66,7 +66,7 @@ const favoriteHandler = (event) => {
       "Content-Type": "application/json",
     },
   });
-  sessionStorage.setItem("fav_team_name", event.target.id.replace("-button", ""));
+  // sessionStorage.setItem("fav_team_name", event.target.id.replace("-button", ""));
   document.location.reload();
 };
 
