@@ -55,17 +55,21 @@ async function loginHandler(event) {
 if (loginForm) {
   loginForm.addEventListener("submit", loginHandler);
 }
+
 const favoriteHandler = (event) => {
   fetch("/api/users/favoriteteam", {
     method: "PUT",
     body: JSON.stringify({
-      teamName: event.target.id,
+      teamName: event.target.id.replace("-button", ""),
     }),
     headers: {
       "Content-Type": "application/json",
     },
   });
+  sessionStorage.setItem("fav_team_name", event.target.id.replace("-button", ""));
+  document.location.reload();
 };
+
 if (favoriteButtons.length) {
   favoriteButtons.forEach((btn) => {
     btn.addEventListener("click", favoriteHandler);

@@ -2,9 +2,15 @@ const {Model,DataTypes} = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class User extends Model {checkPassword(pw) {
-    return bcrypt.compareSync(pw,this.password)
-}};
+class User extends Model {
+	checkPassword(pw) {
+    	    return bcrypt.compareSync(pw,this.password)
+	}
+	
+	checkFavorite(fav) {
+	    return fav === this.fav_team_name;
+	}
+};
 
 User.init(
     {
