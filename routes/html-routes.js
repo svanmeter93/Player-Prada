@@ -14,14 +14,23 @@ html.get("/teams",withauth, async(req,res)=>{
         "X-RapidAPI-Host":"nfl-team-stats.p.rapidapi.com",
     }
 })
-
-
-
 .then((response)=>
     response.json()
 ).then((data)=>{
-    // localStorage.setItem("teamWinStatsList",data._embedded.teamWinStatsList)
-    res.render("teams",{teams:data._embedded.teamWinStatsList})
+	// console.log(data._embedded.teamWinStatsList);
+	const teamObj = data._embedded.teamWinStatsList;
+	
+	teamObj.sort((a, b) => a.name.localeCompare(b.name));
+	// pull data from database for favorite team
+	// teamObj.unshift(/*object data from favorite team pull */);
+
+	data._embedded.teamWinStatsList.forEach(element => {
+		let transformed = element.name.replace(/\s+/g, '-').toLowerCase();
+		console.log(transformed);
+		return transformed.substring(0, transformed.indexOf("-x"));
+	});
+
+	res.render("teams",{teams:data._embedded.teamWinStatsList})
 })
 })
 
@@ -29,4 +38,4 @@ html.get("/signup",(req,res)=>{
     res.render("signup")
 })
 
-module.exports = html
+module.exports = html;
