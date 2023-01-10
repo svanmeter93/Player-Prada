@@ -74,6 +74,24 @@
   cursor: crosshair;
 }
 
+#card-container .card:first-child {
+  border:10px solid rgb(255, 184, 28);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1.5em;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 4rem;
+  color: white;
+  box-sizing: border-box;
+  position: static;
+  z-index: -1;
+  top: 100%;
+  left: -2%;
+  animation: spin 30s linear infinite;
+  background-image: linear-gradient(var(--rotate), var(--colors-steelers));
+ }
+
 #chicago-bears {
   background-image: linear-gradient(var(--rotate), var(--colors-bears));
 }
@@ -201,6 +219,8 @@
 #philadelphia-eagles {
   background-image: linear-gradient(var(--rotate), var(--colors-eagles));
 }
+
+
 
 @keyframes spin {
   0% {
