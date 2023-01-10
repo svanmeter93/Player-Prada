@@ -107,9 +107,8 @@ No Tv? No radio? What's the score of your favorite NFL team? Use our app, Player
    ```sh
    npm install
    ```
-4. Enter your API in `html-routes.js`
-   ```js
-   const API_KEY = 'eeb456aa43msh70da8f932010539p1cd7cbjsn3bd3befcf45b';
+4. Enter your API KEY in `html-routes.js`
+   ```js;
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
